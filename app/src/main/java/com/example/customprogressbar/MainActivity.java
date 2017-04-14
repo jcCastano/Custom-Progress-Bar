@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 int progress = Integer.parseInt(num);
 
                 // Check that progress value is between 0 and 100
-                if (progress > 0 && progress <= 100) {
+                if (progress >= 0 && progress <= 100) {
                     progressBar.setProgress(progress);
                     return;
                 }
