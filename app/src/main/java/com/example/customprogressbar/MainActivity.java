@@ -34,15 +34,14 @@ public class MainActivity extends AppCompatActivity {
             String num = progressNum.getText().toString();
             try {
                 int progress = Integer.parseInt(num);
-                if (progress > 0 && progress <= 100)
+                if (progress > 0 && progress <= 100) {
                     progressBar.setProgress(progress);
-                else
-                    Toast.makeText(MainActivity.this, "Please enter a number between 0 and 100", Toast.LENGTH_LONG).show();
-            } catch (Exception e) {
-                Toast.makeText(MainActivity.this, "Please enter a number between 0 and 100", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            } catch (Exception e){
                 Log.e(TAG, "onClick: ", e);
             }
-
+            Toast.makeText(MainActivity.this, "Please enter a whole number between 0 and 100", Toast.LENGTH_LONG).show();
         }
     };
 
