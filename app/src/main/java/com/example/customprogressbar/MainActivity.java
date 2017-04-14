@@ -31,9 +31,13 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener updateClickedListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // Get the string value of progressNum
             String num = progressNum.getText().toString();
             try {
+                // Parse int value of num
                 int progress = Integer.parseInt(num);
+
+                // Check that progress value is between 0 and 100
                 if (progress > 0 && progress <= 100) {
                     progressBar.setProgress(progress);
                     return;
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e){
                 Log.e(TAG, "onClick: ", e);
             }
+
+            // Alert the user that they should enter a valid number value
             Toast.makeText(MainActivity.this, "Please enter a whole number between 0 and 100", Toast.LENGTH_LONG).show();
         }
     };
